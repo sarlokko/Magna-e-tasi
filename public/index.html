@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Magna e tasi — ricette di cucina con video e procedimento passo passo">
-  <meta name="theme-color" content="#1a1410">
+  <meta name="theme-color" content="#1a0a0a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Magna e tasi">
   <title>Magna e tasi</title>
@@ -21,34 +21,43 @@
     <div class="site-header-inner">
       <p class="site-label">Cucina italiana</p>
       <h1>Magna e tasi</h1>
-      <p class="site-tagline">Scegli una ricetta dalla bowl — video e procedimento affiancati</p>
+      <p class="site-tagline">Le ricette galleggiano nel brodo — tocca per aprire</p>
     </div>
   </header>
 
   <section class="bowl-section" aria-label="Selezione ricette">
-    <div class="bowl-controls">
-      <button type="button" id="btn-prev" class="bowl-nav" aria-label="Ricetta precedente">&#8249;</button>
-      <button type="button" id="btn-next" class="bowl-nav" aria-label="Ricetta successiva">&#8250;</button>
-    </div>
-
     <div class="donburi-wrap">
       <div class="donburi-shadow" aria-hidden="true"></div>
+
       <div class="donburi" id="donburi">
-        <div class="donburi-rim" aria-hidden="true"></div>
-        <div class="donburi-broth" aria-hidden="true">
+        <div class="bowl-body" aria-hidden="true">
+          <div class="bowl-pattern bowl-pattern-outer"></div>
+          <div class="bowl-band bowl-band-gold"></div>
+          <div class="bowl-band bowl-band-red"></div>
+          <div class="bowl-motif bowl-motif-left" aria-hidden="true">梅</div>
+          <div class="bowl-motif bowl-motif-right" aria-hidden="true">花</div>
+        </div>
+
+        <div class="bowl-rim" aria-hidden="true">
+          <div class="rim-highlight"></div>
+          <div class="rim-red-ring"></div>
+        </div>
+
+        <div class="donburi-broth" id="donburi-broth">
+          <div class="broth-glow"></div>
           <div class="broth-shimmer"></div>
+          <div class="broth-ripple ripple-1"></div>
+          <div class="broth-ripple ripple-2"></div>
+          <div class="broth-ripple ripple-3"></div>
           <div class="broth-steam steam-1"></div>
           <div class="broth-steam steam-2"></div>
           <div class="broth-steam steam-3"></div>
+          <div class="broth-floats" id="broth-floats" role="list" aria-label="Ricette galleggianti"></div>
         </div>
-        <div class="orbit-scene" id="orbit-scene">
-          <div class="orbit" id="orbit" role="list" aria-label="Ricette in rotazione"></div>
-        </div>
-        <p class="bowl-hint">Le ricette girano nella bowl — clicca per aprire</p>
+
+        <p class="bowl-hint">Tocca una ricetta per aprirla</p>
       </div>
     </div>
-
-    <div class="bowl-dots" id="bowl-dots" role="tablist" aria-label="Indice ricette"></div>
   </section>
 
   <main class="recipe-stage hidden" id="recipe-stage" aria-live="polite">
@@ -65,7 +74,7 @@
 
         <section class="recipe-detail-panel" aria-label="Dettaglio ricetta">
           <header class="recipe-detail-header">
-            <span id="detail-emoji" class="detail-emoji"></span>
+            <div class="detail-thumb" id="detail-thumb" aria-hidden="true"></div>
             <div>
               <p id="detail-category" class="detail-category"></p>
               <h2 id="detail-title"></h2>

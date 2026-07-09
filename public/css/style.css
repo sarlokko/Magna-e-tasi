@@ -1,21 +1,26 @@
 :root {
-  --bg: #120e0c;
-  --bg-panel: #1e1814;
-  --bg-card: #2a221c;
-  --text: #f5ebe0;
-  --text-muted: #b8a898;
-  --accent: #e07a3a;
-  --accent-glow: #f0a060;
-  --broth: #c4782a;
-  --broth-light: #e8a84a;
-  --bowl-dark: #0a0806;
-  --bowl-rim: #d4cfc8;
-  --border: #3d3228;
-  --shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  --bg: #0f0808;
+  --bg-panel: #1a1010;
+  --bg-card: #241818;
+  --text: #faf0e8;
+  --text-muted: #c4a8a0;
+  --accent: #dc2626;
+  --accent-deep: #991b1b;
+  --accent-glow: #f87171;
+  --gold: #d4a853;
+  --gold-light: #f0d080;
+  --broth: #c45c1a;
+  --broth-light: #e8883a;
+  --broth-deep: #7a3010;
+  --bowl-red: #b91c1c;
+  --bowl-red-dark: #7f1d1d;
+  --bowl-black: #0a0606;
+  --border: #4a2828;
+  --shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
   --radius: 20px;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
-  --orbit-size: min(72vw, 520px);
+  --bowl-size: min(96vw, 920px);
 }
 
 *,
@@ -35,9 +40,11 @@ body {
   line-height: 1.6;
   color: var(--text);
   background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(224, 122, 58, 0.12), transparent),
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(185, 28, 28, 0.22), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(212, 168, 83, 0.08), transparent),
     var(--bg);
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -47,7 +54,7 @@ body {
 /* Header */
 .site-header {
   text-align: center;
-  padding: 2rem 1.25rem 1rem;
+  padding: 1.75rem 1.25rem 0.75rem;
 }
 
 .site-header-inner {
@@ -58,17 +65,21 @@ body {
 .site-label {
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--accent-glow);
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
   margin: 0 0 0.4rem;
 }
 
 .site-header h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
   font-weight: 700;
   margin: 0 0 0.4rem;
   line-height: 1.1;
+  background: linear-gradient(135deg, var(--text) 30%, var(--accent-glow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .site-tagline {
@@ -80,42 +91,16 @@ body {
 /* Bowl section */
 .bowl-section {
   position: relative;
-  padding: 0 1rem 2rem;
+  padding: 0.5rem 0.5rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.bowl-controls {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  z-index: 5;
-}
-
-.bowl-nav {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  background: var(--bg-panel);
-  color: var(--text);
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
-}
-
-.bowl-nav:hover {
-  border-color: var(--accent);
-  background: var(--bg-card);
-  transform: scale(1.05);
-}
-
 .donburi-wrap {
   position: relative;
-  width: min(92vw, 640px);
-  aspect-ratio: 1.15;
+  width: var(--bowl-size);
+  aspect-ratio: 1.05;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,13 +108,13 @@ body {
 
 .donburi-shadow {
   position: absolute;
-  bottom: 4%;
+  bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
-  width: 78%;
-  height: 12%;
-  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
-  filter: blur(8px);
+  width: 85%;
+  height: 14%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.65), transparent 72%);
+  filter: blur(14px);
   pointer-events: none;
 }
 
@@ -142,176 +127,315 @@ body {
   justify-content: center;
 }
 
-.donburi-rim {
+/* Bowl exterior — lacca rossa */
+.bowl-body {
   position: absolute;
   inset: 0;
-  border-radius: 50% 50% 46% 46% / 38% 38% 62% 62%;
-  background: linear-gradient(165deg, #f0ece6 0%, var(--bowl-rim) 18%, #8a847c 45%, #3a3632 70%, var(--bowl-dark) 100%);
+  border-radius: 50% 50% 44% 44% / 36% 36% 64% 64%;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 120%, #1a0808, transparent 50%),
+    linear-gradient(175deg, var(--bowl-red) 0%, var(--bowl-red-dark) 35%, var(--bowl-black) 75%);
   box-shadow:
-    inset 0 8px 24px rgba(255, 255, 255, 0.15),
-    inset 0 -12px 32px rgba(0, 0, 0, 0.5),
-    0 20px 48px rgba(0, 0, 0, 0.5);
+    inset 0 6px 20px rgba(255, 200, 150, 0.12),
+    inset 0 -20px 40px rgba(0, 0, 0, 0.6),
+    0 28px 64px rgba(0, 0, 0, 0.55);
   z-index: 1;
+  overflow: hidden;
 }
 
+.bowl-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 18px, rgba(212, 168, 83, 0.15) 18px, rgba(212, 168, 83, 0.15) 19px),
+    radial-gradient(ellipse 60% 40% at 30% 60%, rgba(248, 113, 113, 0.2), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 70% 55%, rgba(212, 168, 83, 0.15), transparent 70%);
+}
+
+.bowl-band {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  height: 5%;
+  border-radius: 999px;
+}
+
+.bowl-band-gold {
+  top: 22%;
+  background: linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold-light) 50%, var(--gold) 85%, transparent);
+  opacity: 0.7;
+  box-shadow: 0 0 12px rgba(212, 168, 83, 0.4);
+}
+
+.bowl-band-red {
+  top: 30%;
+  height: 3%;
+  background: linear-gradient(90deg, transparent, var(--accent-deep) 20%, var(--accent) 50%, var(--accent-deep) 80%, transparent);
+  opacity: 0.85;
+}
+
+.bowl-motif {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--gold);
+  opacity: 0.55;
+  text-shadow: 0 0 20px rgba(212, 168, 83, 0.5);
+  pointer-events: none;
+}
+
+.bowl-motif-left {
+  left: 8%;
+  top: 38%;
+  transform: rotate(-12deg);
+}
+
+.bowl-motif-right {
+  right: 8%;
+  top: 42%;
+  transform: rotate(10deg);
+}
+
+/* Rim */
+.bowl-rim {
+  position: absolute;
+  inset: 2% 1% 8% 1%;
+  border-radius: 50% 50% 46% 46% / 40% 40% 60% 60%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rim-highlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 6px solid transparent;
+  background:
+    linear-gradient(165deg, rgba(255, 240, 220, 0.5) 0%, rgba(212, 168, 83, 0.3) 20%, transparent 45%) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.rim-red-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 3px solid var(--accent);
+  opacity: 0.6;
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.2),
+    0 0 16px rgba(220, 38, 38, 0.3);
+}
+
+/* Broth interior */
 .donburi-broth {
   position: absolute;
-  top: 14%;
-  left: 10%;
-  right: 10%;
-  bottom: 18%;
+  top: 10%;
+  left: 7%;
+  right: 7%;
+  bottom: 14%;
   border-radius: 50%;
   background:
-    radial-gradient(ellipse 70% 60% at 40% 35%, var(--broth-light), transparent 55%),
-    radial-gradient(ellipse 90% 80% at 50% 55%, var(--broth), #8b4e18 90%);
+    radial-gradient(ellipse 55% 45% at 35% 30%, rgba(255, 220, 160, 0.35), transparent 60%),
+    radial-gradient(ellipse 80% 70% at 55% 60%, var(--broth-light), var(--broth) 55%, var(--broth-deep) 100%);
   overflow: hidden;
-  z-index: 2;
-  box-shadow: inset 0 4px 20px rgba(255, 200, 100, 0.25);
+  z-index: 3;
+  box-shadow:
+    inset 0 6px 30px rgba(255, 180, 80, 0.3),
+    inset 0 -8px 24px rgba(60, 20, 0, 0.5);
+}
+
+.broth-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 45% 40%, rgba(255, 200, 120, 0.25), transparent 70%);
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 .broth-shimmer {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.08) 50%,
-    transparent 60%
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.1) 48%,
+    rgba(255, 255, 255, 0.15) 52%,
+    transparent 65%
   );
-  animation: shimmer 4s ease-in-out infinite;
+  animation: shimmer 5s ease-in-out infinite;
 }
 
 @keyframes shimmer {
-  0%, 100% { transform: translateX(-30%); opacity: 0.4; }
-  50% { transform: translateX(30%); opacity: 0.8; }
+  0%, 100% { transform: translateX(-40%) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateX(40%) rotate(2deg); opacity: 0.7; }
+}
+
+.broth-ripple {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 220, 180, 0.15);
+  animation: ripple-expand 6s ease-out infinite;
+}
+
+.ripple-1 { left: 25%; top: 30%; width: 40px; height: 40px; animation-delay: 0s; }
+.ripple-2 { left: 60%; top: 55%; width: 30px; height: 30px; animation-delay: 2s; }
+.ripple-3 { left: 40%; top: 70%; width: 50px; height: 50px; animation-delay: 4s; }
+
+@keyframes ripple-expand {
+  0% { transform: scale(0.5); opacity: 0.5; }
+  100% { transform: scale(3); opacity: 0; }
 }
 
 .broth-steam {
   position: absolute;
-  width: 24px;
-  height: 48px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.12), transparent);
+  width: 28px;
+  height: 56px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.14), transparent);
   border-radius: 50%;
-  filter: blur(4px);
-  animation: steam-rise 3s ease-in-out infinite;
+  filter: blur(5px);
+  animation: steam-rise 4s ease-in-out infinite;
+  z-index: 4;
 }
 
-.steam-1 { left: 30%; top: 8%; animation-delay: 0s; }
-.steam-2 { left: 50%; top: 5%; animation-delay: 1s; width: 18px; }
-.steam-3 { left: 68%; top: 10%; animation-delay: 2s; width: 20px; }
+.steam-1 { left: 28%; top: 6%; animation-delay: 0s; }
+.steam-2 { left: 48%; top: 3%; animation-delay: 1.3s; width: 22px; }
+.steam-3 { left: 66%; top: 8%; animation-delay: 2.6s; width: 24px; }
 
 @keyframes steam-rise {
-  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.3; }
-  50% { transform: translateY(-12px) scaleX(1.2); opacity: 0.6; }
+  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.25; }
+  50% { transform: translateY(-18px) scaleX(1.3); opacity: 0.55; }
 }
 
-.orbit-scene {
+/* Floating recipe cards */
+.broth-floats {
   position: absolute;
-  top: 18%;
-  left: 14%;
-  right: 14%;
-  bottom: 22%;
-  z-index: 3;
-  perspective: 900px;
+  inset: 4%;
+  z-index: 5;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.float-card {
+  position: absolute;
+  width: clamp(88px, 14vw, 130px);
+  padding: 0;
+  border: none;
+  border-radius: 18px;
+  background: var(--bg-card);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 2px rgba(212, 168, 83, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s, filter 0.3s;
+  will-change: transform, left, top;
+}
+
+.float-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--gold), var(--accent), var(--gold)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.7;
+  z-index: 2;
   pointer-events: none;
 }
 
-.orbit {
+.float-card:hover,
+.float-card:focus-visible {
+  box-shadow:
+    0 12px 40px rgba(220, 38, 38, 0.45),
+    0 0 0 3px var(--accent-glow),
+    0 0 24px rgba(248, 113, 113, 0.4);
+  filter: brightness(1.08) saturate(1.15);
+  z-index: 20 !important;
+}
+
+.float-card-img-wrap {
   position: relative;
   width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.float-card-img {
+  width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(0.34, 1.2, 0.64, 1);
-}
-
-.orbit.paused {
-  transition-duration: 0.5s;
-}
-
-.orbit-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 108px;
-  margin: -54px 0 0 -54px;
-  padding: 0.65rem 0.5rem;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  background: rgba(30, 24, 20, 0.88);
-  backdrop-filter: blur(8px);
-  text-align: center;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.orbit-item:hover {
-  border-color: var(--accent-glow);
-  box-shadow: 0 0 20px rgba(240, 160, 96, 0.35);
-}
-
-.orbit-item.active {
-  border-color: var(--accent-glow);
-  background: rgba(42, 34, 28, 0.95);
-  box-shadow: 0 0 28px rgba(224, 122, 58, 0.5);
-  transform: scale(1.12) !important;
-  z-index: 10;
-}
-
-.orbit-item-emoji {
+  object-fit: cover;
   display: block;
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: 0.25rem;
+  transition: transform 0.4s ease;
 }
 
-.orbit-item-title {
+.float-card:hover .float-card-img {
+  transform: scale(1.08);
+}
+
+.float-card-overlay {
+  position: relative;
+  padding: 0.45rem 0.5rem 0.55rem;
+  background: linear-gradient(180deg, rgba(20, 8, 8, 0.75) 0%, rgba(30, 12, 12, 0.95) 100%);
+  text-align: center;
+}
+
+.float-card-emoji {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-bottom: 0.15rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.float-card-title {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: clamp(0.62rem, 1.8vw, 0.78rem);
   font-weight: 600;
   line-height: 1.2;
   color: var(--text);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.float-card-category {
+  display: block;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-glow);
+  margin-top: 0.1rem;
 }
 
 .bowl-hint {
   position: absolute;
-  bottom: 2%;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  z-index: 4;
+  z-index: 6;
   white-space: nowrap;
+  padding: 0.4rem 1rem;
+  background: rgba(15, 8, 8, 0.6);
+  border-radius: 999px;
+  border: 1px solid var(--border);
 }
 
-.bowl-dots {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
-
-.bowl-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background: var(--border);
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.bowl-dot.active {
-  background: var(--accent);
-  transform: scale(1.25);
-}
-
-/* Recipe stage — split layout */
+/* Recipe stage */
 .recipe-stage {
   padding: 0 1rem 3rem;
   animation: fadeIn 0.5s ease;
@@ -355,7 +479,6 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Video panel */
 .recipe-video-panel {
   display: flex;
   flex-direction: column;
@@ -368,7 +491,8 @@ body {
   background: #000;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 2px solid var(--accent-deep);
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.15);
 }
 
 .video-frame iframe,
@@ -400,7 +524,6 @@ body {
   color: var(--text-muted);
 }
 
-/* Detail panel */
 .recipe-detail-panel {
   min-width: 0;
   overflow-y: auto;
@@ -415,10 +538,15 @@ body {
   margin-bottom: 1rem;
 }
 
-.detail-emoji {
-  font-size: 2.75rem;
-  line-height: 1;
+.detail-thumb {
+  width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
   flex-shrink: 0;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 .detail-category {
@@ -481,7 +609,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.75rem;
-  color: var(--accent-glow);
+  color: var(--gold-light);
 }
 
 .detail-block ul,
@@ -503,7 +631,6 @@ body {
   padding-left: 0.25rem;
 }
 
-/* Footer */
 .footer {
   text-align: center;
   padding: 2rem 1.5rem;
@@ -516,7 +643,6 @@ body {
   margin: 0;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .recipe-split {
     grid-template-columns: 1fr;
@@ -532,36 +658,35 @@ body {
 }
 
 @media (max-width: 520px) {
-  .orbit-item {
-    width: 88px;
-    margin-left: -44px;
-    margin-top: -44px;
-    padding: 0.5rem 0.35rem;
-  }
-
-  .orbit-item-emoji {
-    font-size: 1.5rem;
-  }
-
-  .orbit-item-title {
-    font-size: 0.62rem;
+  .float-card {
+    width: clamp(76px, 22vw, 100px);
+    border-radius: 14px;
   }
 
   .bowl-hint {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
   }
 
   .recipe-split {
     padding: 1rem;
   }
+
+  .detail-thumb {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orbit,
   .broth-shimmer,
   .broth-steam,
+  .broth-glow,
+  .broth-ripple,
   .recipe-stage {
     animation: none;
+  }
+
+  .float-card {
     transition: none;
   }
 }
