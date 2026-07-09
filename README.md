@@ -5,17 +5,10 @@ Sito e app per ricette di cucina italiana — dal Veneto e oltre.
 ## Avvio rapido
 
 ```bash
-cd magna-e-tasi
 npm run serve
 ```
 
 Apri http://localhost:3001
-
-## Struttura
-
-- `public/data/recipes.json` — ricette con video, ingredienti e procedimento
-- `public/css/style.css` — bowl giapponese, carousel 3D e layout video/dettaglio
-- `public/js/app.js` — rotazione ricette nella bowl e vista affiancata
 
 ## Interfaccia
 
@@ -23,36 +16,18 @@ Apri http://localhost:3001
 2. **Selezione** — clicca una ricetta (o usa le frecce) per aprirla
 3. **Vista ricetta** — video a sinistra, ingredienti e procedimento a destra
 
+## Struttura
+
+- `public/data/recipes.json` — ricette con video, ingredienti e procedimento
+- `public/css/style.css` — bowl giapponese, carousel 3D e layout video/dettaglio
+- `public/js/app.js` — rotazione ricette nella bowl e vista affiancata
+
 ## Aggiungere una ricetta
 
-Modifica `public/data/recipes.json` e aggiungi un oggetto con:
+Modifica `public/data/recipes.json` e aggiungi titolo, ingredienti, passi e video YouTube o MP4.
 
-```json
-{
-  "id": "risotto-radicchio",
-  "title": "Risotto al radicchio",
-  "category": "primi",
-  "difficulty": "media",
-  "prepMinutes": 15,
-  "cookMinutes": 25,
-  "servings": 4,
-  "tags": ["vegetariano", "veneto"],
-  "description": "Breve descrizione della ricetta.",
-  "ingredients": ["200 g riso Carnaroli", "..."],
-  "steps": ["Trita la cipolla...", "..."],
-  "emoji": "🍚",
-  "video": {
-    "type": "youtube",
-    "id": "VIDEO_ID_YOUTUBE",
-    "caption": "Didascalia del video"
-  }
-}
-```
-
-Per video propri: `"type": "mp4"`, `"src": "videos/nome.mp4"`.
-
-Per provare l'app, le 10 ricette includono video tutorial da YouTube (placeholder da sostituire con i tuoi quando pronti).
+Le 10 ricette incluse usano video tutorial da YouTube per provare l'app.
 
 ## Pubblicazione
 
-Carica la cartella `public/` su GitHub Pages, Netlify o qualsiasi hosting statico.
+Il workflow GitHub Actions pubblica automaticamente la cartella `public/` su GitHub Pages a ogni push su `main`.
