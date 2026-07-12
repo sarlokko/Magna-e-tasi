@@ -1,0 +1,352 @@
+{
+  "updated": "2026-07-12",
+  "cuisine": "giapponese",
+  "recipes": [
+    {
+      "id": "udon-nikomi",
+      "title": "Udon in brodo",
+      "category": "noodles",
+      "difficulty": "facile",
+      "prepMinutes": 15,
+      "cookMinutes": 25,
+      "servings": 2,
+      "tags": ["giapponese", "noodles", "comfort food"],
+      "description": "Spessi noodles di grano serviti in un brodo dashi profumato con cipollotto e uovo morbido.",
+      "ingredients": [
+        "2 porzioni udon freschi o secchi",
+        "800 ml brodo dashi",
+        "3 cucchiai salsa di soia",
+        "2 cucchiai mirin",
+        "2 uova",
+        "2 cipollotti",
+        "Alga nori a listarelle",
+        "Zenzero grattugiato"
+      ],
+      "steps": [
+        "Prepara il brodo scaldando dashi con salsa di soia e mirin; tienilo al caldo.",
+        "Cuoci le uova 6–7 minuti per un tuorlo cremoso, raffreddale e sbucciale.",
+        "Cuoci gli udon secondo le istruzioni, scolali e distribuiscili nelle ciotole.",
+        "Versa il brodo caldo, aggiungi uovo tagliato a metà, cipollotto e nori.",
+        "Servi con zenzero grattugiato a parte."
+      ],
+      "emoji": "🍜",
+      "image": "https://images.unsplash.com/photo-1618841557871-46625f4e6279?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "5yJ7qEcigDY",
+        "caption": "Video YouTube — Udon in brodo tradizionale"
+      }
+    },
+    {
+      "id": "nikuman-baozi",
+      "title": "Nikuman (baozi)",
+      "category": "antipasti",
+      "difficulty": "media",
+      "prepMinutes": 60,
+      "cookMinutes": 20,
+      "servings": 8,
+      "tags": ["giapponese", "steamed", "street food"],
+      "description": "Panini al vapore ripieni di carne di maiale speziata: la versione giapponese dei baozi cinesi.",
+      "ingredients": [
+        "300 g farina 00",
+        "5 g lievito secco",
+        "150 ml acqua tiepida",
+        "2 cucchiai zucchero",
+        "300 g macinato di maiale",
+        "1 cipolla tritata",
+        "2 cucchiai salsa di soia",
+        "1 cucchiaino zenzero grattugiato",
+        "Olio di sesamo, sale, pepe"
+      ],
+      "steps": [
+        "Impasta farina, lievito, zucchero e acqua; lascia lievitare 1 ora.",
+        "Mescola il ripieno con maiale, cipolla, soia, zenzero e condimenti.",
+        "Stendi l'impasto, ritaglia dischi e farciscili chiudendo a pieghe.",
+        "Lascia riposare 20 minuti su carta forno nel cestello del vapore.",
+        "Cuoci a vapore 15–18 minuti finché gonfi e lucidi."
+      ],
+      "emoji": "🥟",
+      "image": "https://images.unsplash.com/photo-1496116218417-1a781b1df416?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "gE1vYqJ6d0k",
+        "caption": "Video YouTube — Nikuman fatti in casa"
+      }
+    },
+    {
+      "id": "yakisoba",
+      "title": "Yakisoba",
+      "category": "noodles",
+      "difficulty": "facile",
+      "prepMinutes": 15,
+      "cookMinutes": 12,
+      "servings": 2,
+      "tags": ["giapponese", "noodles", "wok"],
+      "description": "Spaghettini di grano saltati in padella con verdure croccanti e salsa yakisoba dolce-salata.",
+      "ingredients": [
+        "2 porzioni noodles yakisoba",
+        "100 g cavolo tagliato",
+        "1 carota julienne",
+        "1/2 cipolla",
+        "100 g pancetta o maiale a fette",
+        "3 cucchiai salsa yakisoba",
+        "Olio vegetale",
+        "Aonori e beni shoga per guarnire"
+      ],
+      "steps": [
+        "Prepara le verdure tagliandole sottili e uniformi.",
+        "Scalda il wok con olio e rosola il maiale, poi aggiungi verdure.",
+        "Aggiungi i noodles sciolti e la salsa yakisoba; salta a fuoco vivo.",
+        "Mescola finché tutto è ben caramellato e le verdure restano croccanti.",
+        "Servi con aonori e zenzero rosso in scaglie."
+      ],
+      "emoji": "🍝",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "v0QSh0YlKow",
+        "caption": "Video YouTube — Yakisoba classico"
+      }
+    },
+    {
+      "id": "onigiri",
+      "title": "Onigiri al salmone",
+      "category": "riso",
+      "difficulty": "facile",
+      "prepMinutes": 20,
+      "cookMinutes": 15,
+      "servings": 4,
+      "tags": ["giapponese", "riso", "portatile"],
+      "description": "Palline di riso triangolari ripiene di salmone e avvolte in alga nori: snack perfetto.",
+      "ingredients": [
+        "400 g riso per sushi cotto",
+        "150 g salmone affumicato o cotto sfilacciato",
+        "4 fogli alga nori",
+        "1 cucchiaino sale",
+        "2 cucchiai riso da sushi condito (opzionale)",
+        "Sesamo tostato"
+      ],
+      "steps": [
+        "Condisci il riso caldo con un pizzico di sale e lascialo intiepidire.",
+        "Bagnati le mani e forma una pallina, crea un incavo e inserisci il salmone.",
+        "Richiudi e modella a triangolo compatto.",
+        "Avvolgi con una striscia di nori e cospargi di sesamo.",
+        "Servi subito o conserva in pellicola fino al consumo."
+      ],
+      "emoji": "🍙",
+      "image": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "pU2kquzSUhY",
+        "caption": "Video YouTube — Onigiri passo passo"
+      }
+    },
+    {
+      "id": "okonomiyaki",
+      "title": "Okonomiyaki",
+      "category": "piatti",
+      "difficulty": "media",
+      "prepMinutes": 20,
+      "cookMinutes": 15,
+      "servings": 2,
+      "tags": ["giapponese", "crespella", "street food"],
+      "description": "Crespella salata di Osaka con cavolo, pancetta e salsa okonomi, maionese e katsuobushi.",
+      "ingredients": [
+        "200 g farina",
+        "200 ml brodo dashi",
+        "2 uova",
+        "300 g cavolo cappuccio",
+        "80 g pancetta a fette",
+        "Salsa okonomiyaki",
+        "Maionese giapponese",
+        "Katsuobushi e aonori"
+      ],
+      "steps": [
+        "Mescola farina, brodo dashi e uova fino a ottenere una pastella liscia.",
+        "Aggiungi il cavolo tagliato finissimo e mescola bene.",
+        "Versa in padella antiaderente, disponi la pancetta sopra e cuoci 5 min per lato.",
+        "Condisci con salsa okonomiyaki a zigzag e maionese.",
+        "Guarnisci con katsuobushi che si muove col calore e aonori."
+      ],
+      "emoji": "🥞",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "3E1uKVWp8b8",
+        "caption": "Video YouTube — Okonomiyaki di Osaka"
+      }
+    },
+    {
+      "id": "ramen-shoyu",
+      "title": "Ramen shoyu",
+      "category": "noodles",
+      "difficulty": "difficile",
+      "prepMinutes": 40,
+      "cookMinutes": 180,
+      "servings": 2,
+      "tags": ["giapponese", "noodles", "brodo"],
+      "description": "Ramen alla soia con brodo di pollo lungo, chashu, uovo ajitsuke e noodles artigianali.",
+      "ingredients": [
+        "2 porzioni noodles ramen",
+        "1 l brodo di pollo",
+        "4 cucchiai salsa di soia",
+        "200 g petto di maiale",
+        "2 uova",
+        "2 cipollotti",
+        "Alga nori",
+        "Zenzero, aglio, mirin"
+      ],
+      "steps": [
+        "Marina il maiale con soia, mirin, aglio e zenzero; rosolalo e cuocilo lentamente.",
+        "Prepara il brodo unendo pollo, dashi e soia; cuoci a fuoco lento per ore.",
+        "Sofficia le uova 7 minuti e marinale nel liquido di cottura del maiale.",
+        "Cuoci i noodles al dente e assembla le ciotole con brodo caldissimo.",
+        "Guarnisci con chashu a fette, uovo, cipollotto e nori."
+      ],
+      "emoji": "🍜",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "hIWoF7cLW5I",
+        "caption": "Video YouTube — Ramen shoyu fatto in casa"
+      }
+    },
+    {
+      "id": "gyoza",
+      "title": "Gyoza",
+      "category": "antipasti",
+      "difficulty": "media",
+      "prepMinutes": 45,
+      "cookMinutes": 15,
+      "servings": 30,
+      "tags": ["giapponese", "fritto", "ripieno"],
+      "description": "Ravioli giapponesi con ripieno di maiale e cavolo, cotti con tecnica fry-steam per fondo croccante.",
+      "ingredients": [
+        "30 wrapper per gyoza",
+        "250 g macinato di maiale",
+        "150 g cavolo tritato finissimo",
+        "2 spicchi aglio",
+        "2 cucchiai salsa di soia",
+        "1 cucchiaino zenzero",
+        "Olio di sesamo",
+        "Acqua, olio per cuocere"
+      ],
+      "steps": [
+        "Strizza il cavolo salato e mescolalo al maiale con aglio, soia e zenzero.",
+        "Riempi i wrapper, bagnando il bordo e chiudendo a mezzaluna con pieghe.",
+        "Scalda olio in padella, disponi i gyoza e rosola il fondo.",
+        "Versa un po' d'acqua, copri e cuoci a vapore finché il fondo è croccante.",
+        "Servi con salsa di soia, aceto di riso e olio di sesamo."
+      ],
+      "emoji": "🥟",
+      "image": "https://images.unsplash.com/photo-1496116218417-1a781b1df416?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "T5xd16nxyMw",
+        "caption": "Video YouTube — Gyoza croccanti"
+      }
+    },
+    {
+      "id": "miso-shiru",
+      "title": "Zuppa di miso",
+      "category": "zuppe",
+      "difficulty": "facile",
+      "prepMinutes": 10,
+      "cookMinutes": 10,
+      "servings": 4,
+      "tags": ["giapponese", "zuppa", "quotidiano"],
+      "description": "Zuppa quotidiana giapponese con pasta di miso, tofu setoso e alga wakame.",
+      "ingredients": [
+        "800 ml brodo dashi",
+        "3 cucchiai pasta di miso",
+        "150 g tofu setoso a cubetti",
+        "2 cucchiai wakame secco",
+        "2 cipollotti",
+        "Tofu fritto o fu (opzionale)"
+      ],
+      "steps": [
+        "Ridrata il wakame in acqua tiepida per 5 minuti.",
+        "Scalda il dashi senza farlo bollire.",
+        "Sciogli il miso in un po' di brodo e incorporalo al resto senza ribollire.",
+        "Aggiungi tofu e wakame, scalda 2 minuti.",
+        "Servi con cipollotto affettato sottile."
+      ],
+      "emoji": "🍲",
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "VvP7j8P4b8E",
+        "caption": "Video YouTube — Zuppa di miso autentica"
+      }
+    },
+    {
+      "id": "maki-salmone",
+      "title": "Maki al salmone",
+      "category": "sushi",
+      "difficulty": "media",
+      "prepMinutes": 40,
+      "cookMinutes": 20,
+      "servings": 4,
+      "tags": ["giapponese", "sushi", "crudo"],
+      "description": "Rotoli di sushi con riso condito, salmone fresco e avocado, avvolti nel nori.",
+      "ingredients": [
+        "300 g riso per sushi",
+        "4 fogli alga nori",
+        "200 g salmone sashimi",
+        "1 avocado",
+        "Riso da sushi (aceto, zucchero, sale)",
+        "Wasabi, salsa di soia, zenzero sottaceto"
+      ],
+      "steps": [
+        "Cuoci e condisci il riso con il riso da sushi; lascialo intiepidire.",
+        "Taglia salmone e avocado a bastoncini uniformi.",
+        "Stendi il riso sul nori, lascia un bordo libero e disponi il ripieno.",
+        "Arrotola con il makisu premendo con decisione.",
+        "Taglia a 6–8 pezzi con coltello bagnato e servi con wasabi e soia."
+      ],
+      "emoji": "🍣",
+      "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "nIoOv6lWYnk",
+        "caption": "Video YouTube — Maki al salmone"
+      }
+    },
+    {
+      "id": "tempura",
+      "title": "Tempura di verdure",
+      "category": "antipasti",
+      "difficulty": "media",
+      "prepMinutes": 20,
+      "cookMinutes": 15,
+      "servings": 4,
+      "tags": ["giapponese", "fritto", "leggero"],
+      "description": "Verdure e gamberi in pastella leggerissima e croccante, fritti al volo e serviti con tentsuyu.",
+      "ingredients": [
+        "1 zucchina",
+        "1 melanzana piccola",
+        "4 funghi shiitake",
+        "8 gamberi",
+        "100 g farina",
+        "1 uovo",
+        "Acqua ghiacciata",
+        "Olio per friggere",
+        "Salsa tentsuyu"
+      ],
+      "steps": [
+        "Taglia le verdure a fette uniformi e incidi leggermente gli shiitake.",
+        "Prepara la pastella mescolando uovo e acqua ghiacciata, poi la farina senza amalgamare troppo.",
+        "Scalda l'olio a 170°C.",
+        "Immergi verdure e gamberi nella pastella e friggi finché dorati e croccanti.",
+        "Scola su carta e servi subito con salsa tentsuyu."
+      ],
+      "emoji": "🍤",
+      "image": "https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "0dYiNQUkdoI",
+        "caption": "Video YouTube — Tempura perfetta"
+      }
+    }
+  ]
+}
