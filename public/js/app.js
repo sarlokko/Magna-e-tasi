@@ -1,9 +1,18 @@
-const CATEGORIES = {
+const CATEGORIES_IT = {
   antipasti: "Antipasti",
   primi: "Primi",
   secondi: "Secondi",
   contorni: "Contorni",
   dolci: "Dolci",
+};
+
+const CATEGORIES_JP = {
+  antipasti: "Antipasti",
+  noodles: "Noodles",
+  riso: "Riso",
+  piatti: "Piatti",
+  zuppe: "Zuppe",
+  sushi: "Sushi",
 };
 
 const DIFFICULTY_LABEL = {
@@ -16,10 +25,28 @@ const BOUNDS = { cx: 50, cy: 50, rx: 44, ry: 40 };
 const MAX_SPEED = 0.14;
 const MIN_SPEED = 0.04;
 
-let recipes = [];
-let floaters = [];
-let animationId = null;
-let brothPaused = false;
+const STAGES = {
+  japanese: {
+    dataFile: "data/recipes-japanese.json",
+    floatsId: "broth-floats-japanese",
+    sectionId: "section-japanese",
+    containerSelector: "#donburi-japanese",
+    categories: CATEGORIES_JP,
+    backLabel: "← Torna al donburi",
+  },
+  italian: {
+    dataFile: "data/recipes-italian.json",
+    floatsId: "plate-floats-italian",
+    sectionId: "section-italian",
+    containerSelector: "#plate-italian",
+    categories: CATEGORIES_IT,
+    backLabel: "← Torna al piatto",
+  },
+};
+
+const stages = {};
+let activeStageId = null;
+let activeRecipeIndex = null;
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -58,7 +85,7 @@ function randomVelocity() {
   };
 }
 
-function createFloaterElement(recipe, index) {
+function createFloaterElement(recipe, index, stage) {
   const img = recipeImage(recipe);
   const btn = document.createElement("button");
   btn.type = "button";
@@ -67,6 +94,8 @@ function createFloaterElement(recipe, index) {
   btn.setAttribute("aria-label", recipe.title);
   btn.setAttribute("role", "listitem");
 
+  const categories = stage.config.categories;
+
   btn.innerHTML = `
     <div class="float-card-img-wrap">
       <img class="float-card-img" src="${escapeHtml(img)}" alt="${escapeHtml(recipe.title)}" loading="lazy" decoding="async">
@@ -74,7 +103,7 @@ function createFloaterElement(recipe, index) {
     <div class="float-card-overlay">
       <span class="float-card-emoji">${recipe.emoji || "🍽️"}</span>
       <span class="float-card-title">${escapeHtml(recipe.title)}</span>
-      <span class="float-card-category">${escapeHtml(CATEGORIES[recipe.category] || recipe.category)}</span>
+      <span class="float-card-category">${escapeHtml(categories[recipe.category] || recipe.category)}</span>
     </div>`;
 
   const imgEl = btn.querySelector(".float-card-img");
@@ -84,20 +113,20 @@ function createFloaterElement(recipe, index) {
     });
   }
 
-  btn.addEventListener("click", () => openRecipe(index));
+  btn.addEventListener("click", () => openRecipe(stage.id, index));
   btn.addEventListener("mouseenter", () => {
-    brothPaused = true;
+    stage.brothPaused = true;
     btn.style.zIndex = "20";
   });
   btn.addEventListener("mouseleave", () => {
-    if ($("#recipe-stage").classList.contains("hidden")) brothPaused = false;
+    if ($("#recipe-stage").classList.contains("hidden")) stage.brothPaused = false;
     btn.style.zIndex = "";
   });
 
   return btn;
 }
 
-function spawnPosition(index, total) {
+function spawnPosition(index) {
   const golden = Math.PI * (3 - Math.sqrt(5));
   const angle = index * golden + (Math.random() - 0.5) * 0.5;
   const dist = 0.3 + ((index % 4) + 1) * 0.14 + Math.random() * 0.1;
@@ -140,18 +169,18 @@ function clampSpeed(floater) {
   }
 }
 
-function renderFloaters() {
-  const container = $("#broth-floats");
+function renderFloaters(stage) {
+  const container = document.getElementById(stage.config.floatsId);
   container.innerHTML = "";
-  floaters = [];
+  stage.floaters = [];
 
-  recipes.forEach((recipe, i) => {
-    const el = createFloaterElement(recipe, i);
+  stage.recipes.forEach((recipe, i) => {
+    const el = createFloaterElement(recipe, i, stage);
     container.appendChild(el);
-    const pos = spawnPosition(i, recipes.length);
+    const pos = spawnPosition(i);
     const vel = randomVelocity();
 
-    floaters.push({
+    stage.floaters.push({
       el,
       x: pos.x,
       y: pos.y,
@@ -162,14 +191,12 @@ function renderFloaters() {
       index: i,
     });
   });
-
-  startFloating();
 }
 
-function updateFloaters() {
-  if (brothPaused) return;
+function updateFloaters(stage) {
+  if (stage.brothPaused) return;
 
-  floaters.forEach((f) => {
+  stage.floaters.forEach((f) => {
     f.x += f.vx;
     f.y += f.vy;
 
@@ -195,20 +222,15 @@ function updateFloaters() {
   });
 }
 
-function animateFloaters() {
-  updateFloaters();
-  animationId = requestAnimationFrame(animateFloaters);
+function animateAllFloaters() {
+  Object.values(stages).forEach((stage) => updateFloaters(stage));
+  requestAnimationFrame(animateAllFloaters);
 }
 
 function startFloating() {
-  if (animationId) cancelAnimationFrame(animationId);
-  animationId = requestAnimationFrame(animateFloaters);
-}
-
-function stopFloating() {
-  if (animationId) {
-    cancelAnimationFrame(animationId);
-    animationId = null;
+  if (!window._floatingStarted) {
+    window._floatingStarted = true;
+    requestAnimationFrame(animateAllFloaters);
   }
 }
 
@@ -254,7 +276,7 @@ function renderVideo(recipe) {
   }
 }
 
-function renderDetail(recipe) {
+function renderDetail(recipe, stage) {
   const thumb = recipeImage(recipe);
   const thumbEl = $("#detail-thumb");
   if (thumb) {
@@ -265,7 +287,8 @@ function renderDetail(recipe) {
     thumbEl.classList.add("hidden");
   }
 
-  $("#detail-category").textContent = CATEGORIES[recipe.category] || recipe.category;
+  const categories = stage.config.categories;
+  $("#detail-category").textContent = categories[recipe.category] || recipe.category;
   $("#detail-title").textContent = recipe.title;
   $("#detail-description").textContent = recipe.description || "";
 
@@ -290,41 +313,68 @@ function renderDetail(recipe) {
     .join("");
 }
 
-function openRecipe(index) {
-  const recipe = recipes[index];
+function openRecipe(stageId, index) {
+  const stage = stages[stageId];
+  const recipe = stage?.recipes[index];
   if (!recipe) return;
 
-  brothPaused = true;
-  renderVideo(recipe);
-  renderDetail(recipe);
+  activeStageId = stageId;
+  activeRecipeIndex = index;
 
+  Object.values(stages).forEach((s) => {
+    s.brothPaused = true;
+  });
+
+  renderVideo(recipe);
+  renderDetail(recipe, stage);
+
+  $("#btn-back").textContent = stage.config.backLabel;
   $("#recipe-stage").classList.remove("hidden");
-  $("#donburi").closest(".donburi-wrap").classList.add("hidden");
+
+  Object.values(stages).forEach((s) => {
+    document.getElementById(s.config.sectionId).classList.add("hidden");
+  });
 
   document.getElementById("recipe-stage").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function closeRecipe() {
   $("#recipe-stage").classList.add("hidden");
-  $("#donburi").closest(".donburi-wrap").classList.remove("hidden");
+
+  Object.values(stages).forEach((s) => {
+    document.getElementById(s.config.sectionId).classList.remove("hidden");
+    s.brothPaused = false;
+  });
 
   const frame = $("#video-frame");
-  frame.innerHTML = `<p class="video-placeholder">Seleziona una ricetta dalla bowl</p>`;
+  frame.innerHTML = `<p class="video-placeholder">Seleziona una ricetta</p>`;
   $("#video-caption").textContent = "";
 
-  brothPaused = false;
+  activeStageId = null;
+  activeRecipeIndex = null;
 }
 
-async function loadRecipes() {
+async function loadStage(stageId) {
+  const config = STAGES[stageId];
+  const stage = {
+    id: stageId,
+    config,
+    recipes: [],
+    floaters: [],
+    brothPaused: false,
+  };
+
   try {
-    const res = await fetch("data/recipes.json");
+    const res = await fetch(config.dataFile);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    recipes = data.recipes || [];
-    renderFloaters();
+    stage.recipes = data.recipes || [];
+    stages[stageId] = stage;
+    renderFloaters(stage);
   } catch (err) {
-    console.error("Impossibile caricare le ricette:", err);
-    $("#broth-floats").innerHTML =
+    console.error(`Impossibile caricare le ricette (${stageId}):`, err);
+    const container = document.getElementById(config.floatsId);
+    container.innerHTML =
       `<p style="color:#c4a8a0;text-align:center;padding:2rem">Errore nel caricamento delle ricette.</p>`;
   }
 }
@@ -333,12 +383,18 @@ function init() {
   $("#year").textContent = new Date().getFullYear();
   $("#btn-back").addEventListener("click", closeRecipe);
 
-  $("#donburi").addEventListener("mouseenter", () => {
-    brothPaused = true;
-  });
-
-  $("#donburi").addEventListener("mouseleave", () => {
-    if ($("#recipe-stage").classList.contains("hidden")) brothPaused = false;
+  Object.entries(STAGES).forEach(([id, config]) => {
+    const container = document.querySelector(config.containerSelector);
+    if (container) {
+      container.addEventListener("mouseenter", () => {
+        if (stages[id]) stages[id].brothPaused = true;
+      });
+      container.addEventListener("mouseleave", () => {
+        if (stages[id] && $("#recipe-stage").classList.contains("hidden")) {
+          stages[id].brothPaused = false;
+        }
+      });
+    }
   });
 
   document.addEventListener("keydown", (e) => {
@@ -348,14 +404,14 @@ function init() {
   });
 
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      stopFloating();
-    } else if (recipes.length && $("#recipe-stage").classList.contains("hidden")) {
+    if (!document.hidden && $("#recipe-stage").classList.contains("hidden")) {
       startFloating();
     }
   });
 
-  loadRecipes();
+  Promise.all(Object.keys(STAGES).map(loadStage)).then(() => {
+    startFloating();
+  });
 }
 
 init();

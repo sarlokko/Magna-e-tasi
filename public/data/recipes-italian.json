@@ -1,0 +1,352 @@
+{
+  "updated": "2026-07-12",
+  "cuisine": "italiano",
+  "recipes": [
+    {
+      "id": "carbonara",
+      "title": "Spaghetti alla carbonara",
+      "category": "primi",
+      "difficulty": "media",
+      "prepMinutes": 15,
+      "cookMinutes": 15,
+      "servings": 4,
+      "tags": ["lazio", "pasta", "classico"],
+      "description": "Il grande classico romano: guanciale croccante, pecorino e uova cremose senza panna.",
+      "ingredients": [
+        "400 g spaghetti",
+        "200 g guanciale",
+        "4 tuorli + 1 uovo intero",
+        "100 g pecorino Romano grattugiato",
+        "Pepe nero macinato",
+        "Sale per la pasta"
+      ],
+      "steps": [
+        "Rosola il guanciale a fuoco medio finché croccante; tieni il grasso in padella.",
+        "Sbatti tuorli, uovo e pecorino con abbondante pepe.",
+        "Cuoci la pasta al dente e scolala conservando un mestolo di acqua.",
+        "Salta la pasta nel grasso del guanciale fuori dal fuoco.",
+        "Aggiungi il composto di uova mescolando velocemente con acqua di cottura per cremare."
+      ],
+      "emoji": "🍝",
+      "image": "https://images.unsplash.com/photo-1612874741227-4c03d1a6c3fd?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "qCW0lSJhJbI",
+        "caption": "Video YouTube — Carbonara romana"
+      }
+    },
+    {
+      "id": "pizza-margherita",
+      "title": "Pizza Margherita",
+      "category": "primi",
+      "difficulty": "media",
+      "prepMinutes": 30,
+      "cookMinutes": 10,
+      "servings": 2,
+      "tags": ["campania", "forno", "napoletana"],
+      "description": "Pizza napoletana con pomodoro San Marzano, fior di latte e basilico fresco.",
+      "ingredients": [
+        "300 g farina 00",
+        "200 ml acqua",
+        "5 g lievito di birra",
+        "10 g sale",
+        "400 g pomodori pelati",
+        "250 g mozzarella",
+        "Basilico fresco",
+        "Olio extravergine"
+      ],
+      "steps": [
+        "Impasta farina, acqua, lievito e sale; fai lievitare fino al raddoppio.",
+        "Stendi i dischi sottili con cornicione alto.",
+        "Condisci con pomodoro schiacciato, mozzarella a pezzi e basilico.",
+        "Inforna nel forno più caldo possibile (250°C+) per 8–10 minuti.",
+        "Finisci con olio a crudo e basilico fresco."
+      ],
+      "emoji": "🍕",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "uYBTfuQpvtM",
+        "caption": "Video YouTube — Pizza Margherita napoletana"
+      }
+    },
+    {
+      "id": "lasagne-bolognese",
+      "title": "Lasagne alla bolognese",
+      "category": "primi",
+      "difficulty": "difficile",
+      "prepMinutes": 45,
+      "cookMinutes": 60,
+      "servings": 6,
+      "tags": ["emilia", "forno", "tradizione"],
+      "description": "Strati di pasta fresca con ragù bolognese, besciamella e parmigiano gratinato.",
+      "ingredients": [
+        "500 g ragù bolognese",
+        "400 g besciamella",
+        "250 g lasagne fresche",
+        "100 g parmigiano grattugiato",
+        "Burro per il tegame",
+        "Noce moscata"
+      ],
+      "steps": [
+        "Prepara un ragù lungo con soffritto, carne e pomodoro.",
+        "Cuoci la besciamella densa con noce moscata.",
+        "Fodera una teglia con ragù, stendi lasagne, besciamella e parmigiano.",
+        "Ripeti gli strati e termina con besciamella e parmigiano.",
+        "Cuoci a 180°C per 40–45 minuti finché gratinate e bollose."
+      ],
+      "emoji": "🍝",
+      "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "0Nn5yR9yV8g",
+        "caption": "Video YouTube — Lasagne alla bolognese"
+      }
+    },
+    {
+      "id": "risotto-zafferano",
+      "title": "Risotto allo zafferano",
+      "category": "primi",
+      "difficulty": "media",
+      "prepMinutes": 10,
+      "cookMinutes": 20,
+      "servings": 4,
+      "tags": ["lombardia", "riso", "milanese"],
+      "description": "Il risotto giallo simbolo di Milano, cremoso con midollo e parmigiano.",
+      "ingredients": [
+        "320 g riso Carnaroli",
+        "1 l brodo di carne caldo",
+        "1 bustina zafferano",
+        "1 cipolla",
+        "100 g burro",
+        "80 g parmigiano",
+        "100 ml vino bianco",
+        "Midollo (opzionale)"
+      ],
+      "steps": [
+        "Infusiona lo zafferano in un po' di brodo caldo.",
+        "Tosta il riso con cipolla tritata e sfuma con il vino.",
+        "Aggiungi il brodo un mestolo alla volta mescolando.",
+        "A metà cottura incorpora lo zafferano.",
+        "Manteca con burro e parmigiano; servi all'onda."
+      ],
+      "emoji": "🍚",
+      "image": "https://images.unsplash.com/photo-1476124369801-b02f4fbb4121?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "rLTLssG2hRg",
+        "caption": "Video YouTube — Risotto allo zafferano"
+      }
+    },
+    {
+      "id": "pesto-genovese",
+      "title": "Trenette al pesto",
+      "category": "primi",
+      "difficulty": "facile",
+      "prepMinutes": 15,
+      "cookMinutes": 12,
+      "servings": 4,
+      "tags": ["liguria", "pasta", "basilico"],
+      "description": "Pesto di basilico genovese DOP con pinoli, pecorino e parmigiano su pasta lunga.",
+      "ingredients": [
+        "400 g trenette o linguine",
+        "60 g foglie di basilico",
+        "30 g pinoli",
+        "50 g parmigiano",
+        "30 g pecorino",
+        "1 spicchio aglio",
+        "Olio extravergine",
+        "Patate e fagiolini (opzionale)"
+      ],
+      "steps": [
+        "Frulla basilico, pinoli, aglio e formaggi con olio a filo fino a crema.",
+        "Cuoci pasta (e verdure se usate) in acqua salata.",
+        "Scola conservando acqua di cottura.",
+        "Condisci con pesto diluito con un po' di acqua di cottura.",
+        "Servi subito con pinoli e basilico."
+      ],
+      "emoji": "🌿",
+      "image": "https://images.unsplash.com/photo-1598866594230-a7c12756260f?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "xJVgPvXr1BU",
+        "caption": "Video YouTube — Pesto genovese autentico"
+      }
+    },
+    {
+      "id": "arancini",
+      "title": "Arancini siciliani",
+      "category": "antipasti",
+      "difficulty": "media",
+      "prepMinutes": 40,
+      "cookMinutes": 20,
+      "servings": 8,
+      "tags": ["sicilia", "fritto", "riso"],
+      "description": "Palle di riso fritte ripiene di ragù, piselli e mozzarella: street food palermitano.",
+      "ingredients": [
+        "400 g riso Arborio",
+        "200 g ragù di carne",
+        "100 g piselli",
+        "150 g mozzarella",
+        "2 uova",
+        "Pangrattato",
+        "Brodo, zafferano, burro",
+        "Olio per friggere"
+      ],
+      "steps": [
+        "Cuoci il riso in brodo con zafferano e manteca; raffredda su un vassoio.",
+        "Prepara il ripieno con ragù, piselli e mozzarella a cubetti.",
+        "Forma una pallina di riso, incava, inserisci ripieno e chiudi.",
+        "Passa in uovo e pangrattato.",
+        "Friggi in olio caldo finché dorati e croccanti."
+      ],
+      "emoji": "🍘",
+      "image": "https://images.unsplash.com/photo-1633504581786-316c800a3141?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "0vF6lYvT3bU",
+        "caption": "Video YouTube — Arancini siciliani"
+      }
+    },
+    {
+      "id": "ossobuco",
+      "title": "Ossobuco alla milanese",
+      "category": "secondi",
+      "difficulty": "media",
+      "prepMinutes": 20,
+      "cookMinutes": 90,
+      "servings": 4,
+      "tags": ["lombardia", "carne", "brasato"],
+      "description": "Fettine di vitello con midollo, brasate nel vino bianco con gremolada fresca.",
+      "ingredients": [
+        "4 ossibuchi di vitello",
+        "1 cipolla",
+        "1 carota",
+        "1 gambo sedano",
+        "200 ml vino bianco",
+        "400 g pomodori pelati",
+        "Brodo",
+        "Farina, burro, olio",
+        "Prezzemolo, aglio, scorza di limone"
+      ],
+      "steps": [
+        "Infarina gli ossibuchi e rosolali in burro e olio.",
+        "Aggiungi soffritto tritato e sfuma con il vino.",
+        "Unisci pomodoro e brodo; cuoci coperto a fuoco basso per 1,5 ore.",
+        "Prepara la gremolada con prezzemolo, aglio e limone.",
+        "Servi con risotto allo zafferano e cospargi di gremolada."
+      ],
+      "emoji": "🥩",
+      "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "kK5qM0zFqhY",
+        "caption": "Video YouTube — Ossobuco alla milanese"
+      }
+    },
+    {
+      "id": "caponata",
+      "title": "Caponata siciliana",
+      "category": "contorni",
+      "difficulty": "media",
+      "prepMinutes": 30,
+      "cookMinutes": 35,
+      "servings": 6,
+      "tags": ["sicilia", "verdure", "agrodolce"],
+      "description": "Melanzane fritte in agrodolce con sedano, olive, capperi e pomodoro: antipasto siciliano.",
+      "ingredients": [
+        "2 melanzane",
+        "2 cipolle",
+        "2 gambi sedano",
+        "400 g pomodori pelati",
+        "100 g olive verdi",
+        "2 cucchiai capperi",
+        "3 cucchiai aceto di vino",
+        "2 cucchiai zucchero",
+        "Olio per friggere"
+      ],
+      "steps": [
+        "Taglia le melanzane a cubetti, sala e scola; friggile e scola.",
+        "Soffriggi cipolla e sedano, aggiungi pomodoro e cuoci 15 minuti.",
+        "Unisci olive, capperi, aceto e zucchero per l'agrodolce.",
+        "Aggiungi le melanzane e cuoci ancora 10 minuti.",
+        "Lascia intiepidire: la caponata è ancora migliore il giorno dopo."
+      ],
+      "emoji": "🍆",
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "mG7yQ9vK8pE",
+        "caption": "Video YouTube — Caponata siciliana"
+      }
+    },
+    {
+      "id": "saltimbocca",
+      "title": "Saltimbocca alla romana",
+      "category": "secondi",
+      "difficulty": "facile",
+      "prepMinutes": 10,
+      "cookMinutes": 10,
+      "servings": 4,
+      "tags": ["lazio", "carne", "veloce"],
+      "description": "Fettine di vitello con prosciutto e salvia, legate e saltate nel vino bianco.",
+      "ingredients": [
+        "8 fettine di vitello sottili",
+        "8 fette di prosciutto crudo",
+        "8 foglie di salvia",
+        "50 g burro",
+        "100 ml vino bianco",
+        "Farina",
+        "Sale, pepe"
+      ],
+      "steps": [
+        "Stendi le fettine, coprile con prosciutto e una foglia di salvia; fissale con stuzzicino.",
+        "Infarinale leggermente.",
+        "Sciogli il burro in padella e cuoci 2 minuti per lato.",
+        "Sfuma con vino bianco e riduci leggermente.",
+        "Servi subito con il fondo di cottura."
+      ],
+      "emoji": "🥩",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "pQ8lK9mN2rT",
+        "caption": "Video YouTube — Saltimbocca alla romana"
+      }
+    },
+    {
+      "id": "tiramisu-classico",
+      "title": "Tiramisù classico",
+      "category": "dolci",
+      "difficulty": "facile",
+      "prepMinutes": 30,
+      "cookMinutes": 0,
+      "servings": 8,
+      "tags": ["veneto", "dolce", "caffè"],
+      "description": "Dolce al cucchiaio con savoiardi, mascarpone, caffè e cacao: il finale perfetto.",
+      "ingredients": [
+        "500 g mascarpone",
+        "4 uova (tuorli e albumi separati)",
+        "100 g zucchero",
+        "300 ml caffè espresso freddo",
+        "300 g savoiardi",
+        "Cacao amaro in polvere",
+        "Marsala o liquore al caffè (opzionale)"
+      ],
+      "steps": [
+        "Monta i tuorli con lo zucchero fino a crema chiara.",
+        "Incorpora il mascarpone e amalgama delicatamente.",
+        "Monta gli albumi a neve e uniscili al composto.",
+        "Inzuppa i savoiardi nel caffè freddo e stratifica in una teglia.",
+        "Spolvera con cacao e riposa in frigo almeno 4 ore."
+      ],
+      "emoji": "🍰",
+      "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=480&h=360&fit=crop&q=85",
+      "video": {
+        "type": "youtube",
+        "id": "m6kcANnAJSo",
+        "caption": "Video YouTube — Tiramisù classico"
+      }
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Magna e tasi — ricette di cucina con video e procedimento passo passo">
+  <meta name="description" content="Magna e tasi — ricette giapponesi e italiane con video e procedimento passo passo">
   <meta name="theme-color" content="#1a0a0a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Magna e tasi">
@@ -13,37 +13,47 @@
   <link rel="apple-touch-icon" href="icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Noto+Serif+JP:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <p class="site-label">Cucina italiana</p>
+      <p class="site-label">Cucina giapponese &amp; italiana</p>
       <h1>Magna e tasi</h1>
-      <p class="site-tagline">Le ricette galleggiano nel brodo — tocca per aprire</p>
+      <p class="site-tagline">Due mondi di sapori — tocca una ricetta per aprirla</p>
     </div>
   </header>
 
-  <section class="bowl-section" aria-label="Selezione ricette">
+  <!-- Sezione Giapponese -->
+  <section class="cuisine-section cuisine-section--japanese" id="section-japanese" aria-label="Ricette giapponesi">
+    <header class="cuisine-header">
+      <span class="cuisine-flag" aria-hidden="true">🇯🇵</span>
+      <h2 class="cuisine-title">Cucina giapponese</h2>
+      <p class="cuisine-subtitle">Le ricette galleggiano nel donburi — udon, baozi, okonomiyaki e altro</p>
+    </header>
+
     <div class="donburi-wrap">
       <div class="donburi-shadow" aria-hidden="true"></div>
 
-      <div class="donburi" id="donburi">
+      <div class="donburi" id="donburi-japanese" data-stage="japanese">
         <div class="bowl-body" aria-hidden="true">
-          <div class="bowl-pattern bowl-pattern-outer"></div>
+          <div class="bowl-pattern bowl-pattern-seigaiha"></div>
+          <div class="bowl-band bowl-band-indigo"></div>
           <div class="bowl-band bowl-band-gold"></div>
-          <div class="bowl-band bowl-band-red"></div>
-          <div class="bowl-motif bowl-motif-left" aria-hidden="true">梅</div>
-          <div class="bowl-motif bowl-motif-right" aria-hidden="true">花</div>
+          <div class="bowl-sakura bowl-sakura-1" aria-hidden="true">✿</div>
+          <div class="bowl-sakura bowl-sakura-2" aria-hidden="true">✿</div>
+          <div class="bowl-sakura bowl-sakura-3" aria-hidden="true">✿</div>
+          <div class="bowl-motif bowl-motif-left" aria-hidden="true">食</div>
+          <div class="bowl-motif bowl-motif-right" aria-hidden="true">味</div>
         </div>
 
         <div class="bowl-rim" aria-hidden="true">
           <div class="rim-highlight"></div>
-          <div class="rim-red-ring"></div>
+          <div class="rim-indigo-ring"></div>
         </div>
 
-        <div class="donburi-broth" id="donburi-broth">
+        <div class="donburi-broth" id="donburi-broth-japanese">
           <div class="broth-glow"></div>
           <div class="broth-shimmer"></div>
           <div class="broth-ripple ripple-1"></div>
@@ -52,7 +62,7 @@
           <div class="broth-steam steam-1"></div>
           <div class="broth-steam steam-2"></div>
           <div class="broth-steam steam-3"></div>
-          <div class="broth-floats" id="broth-floats" role="list" aria-label="Ricette galleggianti"></div>
+          <div class="broth-floats" id="broth-floats-japanese" role="list" aria-label="Ricette giapponesi galleggianti"></div>
         </div>
 
         <p class="bowl-hint">Tocca una ricetta per aprirla</p>
@@ -60,14 +70,59 @@
     </div>
   </section>
 
+  <!-- Sezione Italiana -->
+  <section class="cuisine-section cuisine-section--italian" id="section-italian" aria-label="Ricette italiane">
+    <header class="cuisine-header">
+      <span class="cuisine-flag" aria-hidden="true">🇮🇹</span>
+      <h2 class="cuisine-title">Cucina italiana</h2>
+      <p class="cuisine-subtitle">Le ricette girano nel piatto — dalla Sicilia al Lazio, dall'Emilia alla Liguria</p>
+    </header>
+
+    <div class="plate-wrap">
+      <div class="plate-shadow" aria-hidden="true"></div>
+
+      <div class="sicilian-plate" id="plate-italian" data-stage="italian">
+        <div class="plate-rim" aria-hidden="true">
+          <div class="plate-rim-pattern"></div>
+          <div class="plate-rim-blue"></div>
+          <div class="plate-rim-yellow"></div>
+        </div>
+
+        <div class="plate-body" aria-hidden="true">
+          <div class="plate-ceramic"></div>
+          <div class="plate-decoration plate-deco-1">❋</div>
+          <div class="plate-decoration plate-deco-2">❋</div>
+          <div class="plate-decoration plate-deco-3">❋</div>
+        </div>
+
+        <div class="pizza-surface" id="pizza-surface">
+          <div class="pizza-crust" aria-hidden="true"></div>
+          <div class="pizza-sauce" aria-hidden="true"></div>
+          <div class="pizza-mozzarella moz-1" aria-hidden="true"></div>
+          <div class="pizza-mozzarella moz-2" aria-hidden="true"></div>
+          <div class="pizza-mozzarella moz-3" aria-hidden="true"></div>
+          <div class="pizza-mozzarella moz-4" aria-hidden="true"></div>
+          <div class="pizza-mozzarella moz-5" aria-hidden="true"></div>
+          <div class="pizza-basil basil-1" aria-hidden="true">🌿</div>
+          <div class="pizza-basil basil-2" aria-hidden="true">🌿</div>
+          <div class="pizza-basil basil-3" aria-hidden="true">🌿</div>
+          <div class="pizza-shimmer" aria-hidden="true"></div>
+          <div class="plate-floats" id="plate-floats-italian" role="list" aria-label="Ricette italiane galleggianti"></div>
+        </div>
+
+        <p class="plate-hint">Tocca una ricetta per aprirla</p>
+      </div>
+    </div>
+  </section>
+
   <main class="recipe-stage hidden" id="recipe-stage" aria-live="polite">
     <div class="recipe-stage-inner">
-      <button type="button" id="btn-back" class="btn-back">← Torna alla bowl</button>
+      <button type="button" id="btn-back" class="btn-back">← Torna alle ricette</button>
 
       <article class="recipe-split" id="recipe-split">
         <section class="recipe-video-panel" aria-label="Video ricetta">
           <div class="video-frame" id="video-frame">
-            <p class="video-placeholder">Seleziona una ricetta dalla bowl</p>
+            <p class="video-placeholder">Seleziona una ricetta</p>
           </div>
           <p class="video-caption" id="video-caption"></p>
         </section>
@@ -101,7 +156,7 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Magna e tasi — Buon appetito!</p>
+    <p>&copy; <span id="year"></span> Magna e tasi — Buon appetito! いただきます</p>
   </footer>
 
   <script src="js/app.js"></script>
